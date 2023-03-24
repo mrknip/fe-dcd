@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RandomImageDisplayComponent } from './features/random-image-display/random-image-display.component';
 import { DcdApiService } from './services/dcd-api.service';
 import { FullImageUrlPipe } from './pipes/full-image-url.pipe';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { FullImageUrlPipe } from './pipes/full-image-url.pipe';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [DcdApiService],
+  providers: [DcdApiService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

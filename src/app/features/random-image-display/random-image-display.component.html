@@ -6,8 +6,9 @@
 </div>
 
 <div class="image-list-container">
-    <div *ngFor="let image of images" class="image-container">
-        <img class="image" src="{{ image.uri | fullImageUrl }}"/>
+    <div *ngFor="let image of images" [ngClass]="{'image-container': true, favourite: image.isFavourite}">
+        <img (click)="onImageSelected(image)" class="image"  src="{{ image.uri | fullImageUrl }}"/>
+        <!-- <img (click)="onImageSelected(image)" [ngClass]="{image: true, favourite: image.isFavourite}"  src="{{ image.uri | fullImageUrl }}"/> -->
         <!-- <div class="image" [ngStyle]="{'background-image': 'url(http://localhost:3000/' + image.uri + ')' }"></div> -->
     </div>
 </div>
