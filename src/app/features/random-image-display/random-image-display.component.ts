@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DcdApiService } from '../dcd-api.service';
-import { ImageMetadata } from '../dcd-api.service.types';
+import { DcdApiService } from '../../services/dcd-api.service';
+import { ImageMetadata } from '../../services/dcd-api.service.types';
 
 @Component({
   selector: 'app-random-image-display',
