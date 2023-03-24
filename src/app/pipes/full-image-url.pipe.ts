@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Pipe({
   name: 'fullImageUrl'
@@ -6,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FullImageUrlPipe implements PipeTransform {
 
   transform(imagePath: string) {
-    return `http://localhost:3000/${imagePath}`;
+    return `${environment.apiUrl}/${imagePath}`;
   }
 
 }

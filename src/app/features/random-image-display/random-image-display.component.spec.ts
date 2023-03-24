@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomImageDisplayComponent } from './random-image-display.component';
+import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('RandomImageDisplayComponent', () => {
   let component: RandomImageDisplayComponent;
@@ -8,7 +9,8 @@ describe('RandomImageDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RandomImageDisplayComponent ]
+      declarations: [ RandomImageDisplayComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
 
