@@ -1,14 +1,20 @@
 <div class="button-container">
-<button (click)="refetchRandom('dog')">DOGS!</button>
-<button (click)="refetchRandom('duck')">DUCKS!</button>
-<button (click)="refetchRandom('cat')">CATS!</button>
-<button (click)="refetchRandom()">I WANT IT ALL!</button>
+    <button (click)="refetchRandom('dog')">DOGS!</button>
+    <button (click)="refetchRandom('duck')">DUCKS!</button>
+    <button (click)="refetchRandom('cat')">CATS!</button>
+    <button (click)="refetchRandom()">I WANT IT ALL!</button>
 </div>
 
 <div class="image-list-container">
     <div *ngFor="let image of images" [ngClass]="{'image-container': true, favourite: image.isFavourite}">
-        <img (click)="onImageSelected(image)" class="image"  src="{{ image.uri | fullImageUrl }}"/>
-        <!-- <img (click)="onImageSelected(image)" [ngClass]="{image: true, favourite: image.isFavourite}"  src="{{ image.uri | fullImageUrl }}"/> -->
-        <!-- <div class="image" [ngStyle]="{'background-image': 'url(http://localhost:3000/' + image.uri + ')' }"></div> -->
+        <img
+            src="{{ image.uri | fullImageUrl }}"
+            class="image" 
+            tabindex="0" 
+            alt="{{image.description}}" 
+            (click)="onImageSelected(image)" 
+            (keydown)="$event.keyCode === 13 ? onImageSelected(image) : null"
+            (load)="onImageLoaded(image)"
+        />
     </div>
 </div>

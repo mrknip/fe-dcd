@@ -4,7 +4,7 @@ import { DcdApiService } from '../../services/dcd-api.service';
 import { ImageMetadata } from '../../services/dcd-api.service.types';
 
 type ImagesWithFavourites = ImageMetadata & {
-  isFavourite: boolean;
+  isFavourite?: boolean;
 }
 
 @Component({
@@ -19,30 +19,29 @@ export class RandomImageDisplayComponent {
 
   ngOnInit() {
     this.dcdApiService.getRandomImages().subscribe({
-      next: images => this.images = this.mapFavourites(images),
+      next: images => this.images = images,
       error: err => console.error(err),
-      complete: () => console.log('random image fetch complete')
     });
   }
 
   refetchRandom(species?: string) {
     this.dcdApiService.getRandomImages({ species }).subscribe({
-      next: images => {this.images = this.mapFavourites(images); console.log(this.images)},
+      next: images => this.images = images,
       error: err => console.error(err),
-      complete: () => console.log('random image fetch complete')
     });
   }
 
   onImageSelected(image: ImageMetadata) {
     this.userService.addFavourite(image)
+
     const imageIndex = this.images.findIndex(i => i.id === image.id)
     this.images[imageIndex].isFavourite = !this.images[imageIndex].isFavourite;
   }
 
-  mapFavourites(images: ImageMetadata[]) {
-    return images.map((image) => ({
-      ...image,
-      isFavourite: this.userService.isFavourite(image.id)
-    }))
+  onImageLoaded(image: ImageMetadata) {
+    const isFavourite = this.userService.isFavourite(image.id);
+    
+    const imageIndex = this.images.findIndex(i => i.id === image.id)
+    this.images[imageIndex].isFavourite = isFavourite;
   }
 }
