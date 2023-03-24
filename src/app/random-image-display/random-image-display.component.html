@@ -1,0 +1,13 @@
+<div class="button-container">
+<button (click)="refetchRandom('dog')">DOGS!</button>
+<button (click)="refetchRandom('duck')">DUCKS!</button>
+<button (click)="refetchRandom('cat')">CATS!</button>
+<button (click)="refetchRandom()">I WANT IT ALL!</button>
+</div>
+
+<div class="image-list-container">
+    <div *ngFor="let image of images" class="image-container">
+        <img class="image" src="{{ image.uri | fullImageUrl }}"/>
+        <!-- <div class="image" [ngStyle]="{'background-image': 'url(http://localhost:3000/' + image.uri + ')' }"></div> -->
+    </div>
+</div>
