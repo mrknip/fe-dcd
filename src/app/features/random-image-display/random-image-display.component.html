@@ -11,6 +11,7 @@
             src="{{ image.uri | fullImageUrl }}"
             class="image" 
             tabindex="0" 
+            draggable="false"
             alt="{{image.description}}" 
             (click)="onImageSelected(image)" 
             (keydown)="$event.keyCode === 13 ? onImageSelected(image) : null"
