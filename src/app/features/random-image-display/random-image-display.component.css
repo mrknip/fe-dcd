@@ -1,16 +1,18 @@
 .button-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 32px;
 }
 
 .button-container button {
-    margin: 0 16px;
+    margin: 4px 16px;
     padding: 12px 16px;
     border-radius: 8px;
     border: none;
     background-color: #05386B;
     font-family: "Alfa Slab One", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    white-space: nowrap;
 }
 
 .button-container button:hover {

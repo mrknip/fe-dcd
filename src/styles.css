@@ -23,7 +23,7 @@ h6 {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: normal;
 }
 
@@ -43,3 +43,15 @@ button {
     color: #EDF5E1;
     font-family: "Alfa Slab One", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+@media screen and (max-width:768px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width:480px) {
+    body {
+      font-size: 10px;
+    }
+  }
