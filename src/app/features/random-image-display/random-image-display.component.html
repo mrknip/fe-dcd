@@ -6,16 +6,5 @@
 </div>
 
 <div class="image-list-container">
-    <div *ngFor="let image of images" [ngClass]="{'image-container': true, favourite: image.isFavourite}">
-        <img
-            src="{{ image.uri | fullImageUrl }}"
-            class="image" 
-            tabindex="0" 
-            draggable="false"
-            alt="{{image.description}}" 
-            (click)="onImageSelected(image)" 
-            (keydown)="$event.keyCode === 13 ? onImageSelected(image) : null"
-            (load)="onImageLoaded(image)"
-        />
-    </div>
+    <app-image-card *ngFor="let image of images" [image]="image"/>
 </div>

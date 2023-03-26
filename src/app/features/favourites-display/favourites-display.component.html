@@ -1,0 +1,5 @@
+<div *ngIf="hasFavourites()" class="image-list-container">
+    <app-image-card *ngFor="let image of favourites" [image]="image"/>
+</div>
+
+<p *ngIf="!hasFavourites()">No favourites yet - go see some animals</p>

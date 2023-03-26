@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { ImageMetadata } from './dcd-api.service.types';
 
 @Injectable({
@@ -7,8 +8,9 @@ import { ImageMetadata } from './dcd-api.service.types';
 export class UserService {
   private favourites: ImageMetadata[] = [];
 
-
-  constructor() { }
+  public getFavourites() {
+    return of(this.favourites) 
+  }
 
   public isFavourite(id: number) {
     return !!this.favourites.find(favourite => favourite.id === id)

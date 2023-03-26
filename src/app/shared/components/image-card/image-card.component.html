@@ -1,0 +1,14 @@
+<div 
+    [ngClass]="{'image-container': true, favourite: isFavourite}" 
+    (click)="onImageSelected()" 
+    (keydown)="$event.keyCode === 13 ? onImageSelected() : null"
+>
+    <img
+        src="{{ image.uri | fullImageUrl }}"
+        class="image" 
+        tabindex="0" 
+        draggable="false"
+        alt="{{image.description}}" 
+        (load)="onImageLoaded()"
+    />
+</div>

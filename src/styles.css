@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-
-p {
-    margin: 0;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html {
+    font-size: 14px;
 }
-
 
 body {
     margin: 0;
+    color: #EDF5E1;
     background-color: #5CDB95;
 }
 
@@ -17,6 +20,23 @@ h4,
 h5,
 h6 {
     margin: 8px 0;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: normal;
+}
+
+
+a {
+    color: #EDF5E1;
+    text-decoration: none; /* no underline */
+    font-size: 1.5em;
+  }
+
+p {
+    margin: 0;
+    font-size: 1.5em;
 }
 
 button {

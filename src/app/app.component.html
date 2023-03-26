@@ -12,23 +12,34 @@
 
   :host {
     font-family: "Alfa Slab One", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
     color: #EDF5E1;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .toolbar {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #5CDB95;
-    font-size: 3rem;
-    padding: 16px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
   }
 
+  p {
+    margin: 0;
+  } */
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    text-align: center;
+    background-color: #5CDB95;
+    padding: 16px;
+  }
 
   .content {
     display: flex;
@@ -38,15 +49,15 @@
     flex-direction: column;
     align-items: center;
   }
-
 </style>
 
 <div class="toolbar" role="banner">
-  <span>Dogs'n'cats'n'ducks</span>
+  <h1>Dogs'n'cats'n'ducks</h1>
+  <app-tab-nav/>
 </div>
 
 <div class="content" role="main">
-  <app-random-image-display/>
+  <router-outlet/>
 </div>
 
-<router-outlet></router-outlet>
+

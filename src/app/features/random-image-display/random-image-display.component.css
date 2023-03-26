@@ -27,32 +27,5 @@
     max-width: 960px;
     padding: 16px;
     background-color: #379863;
-    /* border: 5px solid #05386B; */
     border-radius: 8px;
-}
-
-.image-container {
-    position: relative;
-    height: 200px;
-    margin: 4px;
-}
-
-.image {
-    height: 200px;
-    content: '';
-}
-
-.image:hover {
-    box-shadow: 0px 0px 3px 3px green;
-}
-
-.favourite::after {
-    background: url("/assets/heart.png") 0 0 no-repeat;
-    background-size: contain;
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    content: ' ';
 }
