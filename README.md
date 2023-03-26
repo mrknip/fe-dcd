@@ -3,6 +3,7 @@
 Simple front-end application built with Angular, for enjoying pictures of dogs, and cats, and ducks
 
 Deployed (in a _very_ lazy way) to https://dogsncatsnducks.netlify.app/
+ - Please be aware that the freebie hosting service used for the backend (Render) puts the API to sleep after periods of inactivity.  The first fetch on navigating to the site may take upwards of 30s to resolve!
 
 To run locally and play:
  - `npm i`
